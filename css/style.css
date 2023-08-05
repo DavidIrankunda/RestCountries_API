@@ -1,0 +1,328 @@
+:root{
+    --dm-background: hsl(207, 26%, 17%);
+    --dm-text: hsl(0, 0%, 100%);
+    --dm-elements: hsl(209, 23%, 22%);
+
+    --dm-inputs: white;
+    --lm-inputs: hsl(0, 0%, 52%);
+
+    --lm-background: hsl(0, 0%, 98%);
+    --lm-text: hsl(200, 15%, 8%);
+    --lm-elements: hsl(0, 0%, 100%);
+
+    
+    --fw-300: 300;
+    --fw-600: 600;
+    --fw-800: 800;
+}
+
+*{
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+/* I will work with CUBE css metholodogie + write my classes with BEM metholodogie way  */
+/* Start Compositions  */
+    .container{
+        max-width: 60rem;
+        margin: auto;
+        padding-inline: 1rem;
+    }
+    .flex-space-between{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+/* End Compositions  */
+/* Start utilities classes  */
+    .fw-300{
+        font-weight: var(--fw-300);
+    }
+    .fw-600{
+        font-weight: var(--fw-600);
+    }
+    .fw-800{
+        font-weight: var(--fw-800);
+    }
+    .fs-16{
+        font-size: 1rem
+    }
+    .fs-14{
+        font-size: 14px;
+    }
+    .lm-text{
+        color: var(--lm-text);
+    }
+    .lm-elements{
+        color: var(--lm-elements)
+    }
+    .dm-text{
+        color: var(--dm-text)
+    }
+    .dm-elements{
+        color: var(--dm-elements)
+    }
+    .lm-inputs{
+        color: var(--lm-inputs);
+    }
+    .dm-inputs{
+        color: var(--dm-inputs);
+    }
+    .lm-background{
+        background-color: var(--lm-background);
+    }
+    .dm-background{
+        background-color: var(--dm-background);
+    }
+   
+/* End utilities classes  */
+/* Start blocks */
+    /* Start General */
+
+    /* End General */
+    /* start header  */
+        .header{
+            min-height: 100% ;
+            background-color: var(--lm-elements);
+        }
+        .header *{
+            color: var(--lm-text)
+        }
+        .header > div{
+            width: 100%;
+            min-height: 4rem;
+        }
+        button{
+            cursor: pointer;
+        }
+    /* End header  */
+    /* Start main  */
+        /* start second header "filter by region and search countries Bar" */
+            .main{
+                background-color: var(--lm-background);
+            }
+            .main *{
+                color: var(--lm-text);
+            }
+            .searchFilterBar{
+                padding-block: 2rem;
+            }
+            @media(max-width: 40em){
+                .searchFilterBar{
+                    padding-block: 1.5rem;
+                }
+            }
+            .searchFilterBar > *{
+                min-height: 3rem;
+                background-color: blue;
+                display:flex;
+                align-items: center;
+                align-content: center;
+                max-width: 100%;
+                border-radius: .25rem;
+                box-shadow: 0 0 .75rem -5px rgba(0,0,0,.2);
+                background-color: var(--lm-elements);
+            }
+            
+            .input-container{
+                align-content: center ;
+            }
+            .input-container i{
+                padding-inline: 1rem;
+                color: var(--lm-inputs);
+            }
+            .searchInput{
+                background-color: transparent;
+                color: var(--lm-text);
+                width: 100%;
+            }
+            .searchInput::placeholder{
+                color: hsl(0, 0%, 52%);
+                font-weight: var(--fw-300);
+            }
+            @media(max-width: 40em){
+                .searchFilterBar{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1rem;
+                }
+                .input-container{
+                    width: 100%;
+                }
+                .searchFilterBar select{
+                    width: 50vw;
+                }
+            }
+            .input-container input:focus{
+                outline: none;
+            }
+            .region-filter {
+                padding-inline: 1rem;
+                width: 15rem;
+                height: 100%;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                color: var(--lm-inputs);
+            }
+            /* End second header "filter by region and search countries Bar" */
+        /* Start the main block that display all the countries's cartes  */
+            .cartes{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 2rem;
+                cursor: pointer;
+                min-height: calc(100vh - 176px);
+            }
+            .cartes > *{
+                flex-grow: 3;
+            }
+            @media(max-width: 45em){
+                .cartes{
+                    padding-inline: 2rem;
+                }
+            }
+            .carte{
+                border-radius: .25rem;
+                width: 15rem;
+                min-height: 20rem;
+                flex-direction: column;
+                box-shadow: 0 0 .5rem 0px rgba(0,0,0,.2);
+                border-radius: .25rem;
+                overflow: hidden;
+            }
+            .carte:hover{
+                box-shadow: 0 0 .5rem 0px rgba(0,0,0,.7);
+            }
+            .carte__image{
+                width: 100%;
+                height: calc(20rem - 155.6px);  
+                /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"); */
+                background-position: center center;
+                background-size: 100% 100%;
+                transition: .1s ease-in-out;
+            }
+            .carte__infos{
+                padding-block: 2rem;
+                padding-inline: 1rem;
+                width: 100%;
+                background-color: var(--lm-elements);
+            }
+            .carte__infos__title {
+                margin-top: 0;
+            }
+        /* End the main block that display all the countries's cartes  */
+        /* Start ".main2" page of full-data of the country clicked  */
+            .main2{
+                min-height: calc(100vh - 64px);
+            }
+            .main2 
+            .back-button{
+                padding-inline: 1.7rem;
+                padding-block: .6rem;
+                margin-block: 2rem;
+                box-shadow: 0 0 .5rem 0 rgba(0,0,0,.2);
+                border-radius: .3rem;
+                background-color: var(--lm-elements);
+            }
+            @media (min-width: 40em){
+                .country-info-container{
+                    gap: 5rem;
+                }
+            }
+            @media(max-width: 40em){
+                .country-info-container{
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+            .country-info-image{
+                display: block;
+                width: 30rem;
+                max-width: 100%;
+                height: 17rem;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                box-shadow: 0 0 .8rem .01rem rgba(0,0,0,.3);
+            }
+            @media(max-width: 40em){
+                .country-info-image{
+                    width: 40rem;
+                    max-width: 100%;
+                    height: 15rem;
+                } 
+            }
+            .country-info-data{
+                width: 50%;
+                min-height: 17rem;
+                container-type : inline-size;
+            }
+            @media(max-width: 40em) {
+                .country-info-data{
+                    width: 100%;
+                }
+            }
+            .country-info-data__title{
+                font-size: 1.75rem;
+            }
+            .country-info-data__micro-container{
+                align-items: flex-start;
+            }
+            .country-info-data__micro-container .fw-600{
+            }
+            .country-info-data__micro-container .fw-600 + *{
+                color: gray;
+            }
+            @container (max-width: 25em){
+                .country-info-data__micro-container{
+                    flex-direction: column;
+                }
+            }
+            .country-info-data__micro-container > * > *{
+                padding-bottom: 5px;
+            }
+            .country-info-data__border-countries{
+                padding-block: 2rem;
+            }
+            .border-countries1{
+                padding-left: .5rem;
+            }
+            .border-countries1Inside {
+                color: var(--lm-text);
+                background-color: var(--lm-elements);
+                font-weight: var(--fw-300);
+                display: inline-block;
+                padding-block: .2rem;
+                padding-inline: 1rem;
+                box-shadow: 0 0 .5rem 0 rgba(0,0,0,.2);
+                border-radius: .25rem;
+                font-size: 14px;
+                margin-right: .3rem;
+                margin-top: .2rem;
+                
+            }
+           
+        /* End ".main2" page of full-data of the country clicked  */
+        /* Start styling the button of back to top  */
+        .backToTop{
+            display: none;
+            width: 4rem;
+            height: 4rem;
+            border-radius: .25rem;
+            background-color: var(--lm-elements);
+            border: 1px solid var(--lm-text);
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            transform: rotate(90deg);
+            font-size: 1.5rem;
+        }
+        .backToTop i{
+            color: var(--lm-text)
+        }
+        /* End styling the button of back to top  */
+    /* End main  */
+/* End blocks */
+

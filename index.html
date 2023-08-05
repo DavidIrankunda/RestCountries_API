@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries API App</title>
+    <!-- CSS links  -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <!-- JavaScript links  -->
+    <script src="./javascript/main.js" defer></script>
+    <!-- Font awsome icons links -->
+    <script src="https://kit.fontawesome.com/c6da55cc0b.js" crossorigin="anonymous"></script>
+    <!-- Google Font links  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- start header  -->
+    <header class="header | lm-text">
+        <div class="container | flex-space-between ">
+            <p class="fw-800">Where in the world?</p>
+            <button class="lm-dm-switcher | fw-600"><i class="fa-regular fa-lightbulb"></i> <span>Dark mode</span></button>
+        </div>
+    </header>
+    <!-- End header  -->
+    <!-- start main  -->
+    <main class="main">
+        <!-- start the second header of "searching countries by name & filter countiries by region" -->
+        <div class="searchFilterBar | container | flex-space-between">
+                <form action="" class="form">
+                    <label for="" class="input-container lm-text fw-300 | flex-space-between"><i class="fa-solid fa-magnifying-glass | fs-14 lm-inputs"></i><input class="searchInput | lm-inputs" list="countries-name" placeholder="Search for a country..." autofocus class="fs-14" ></label>
+                    <datalist id="countries-name">
+                    </datalist>
+                </form>
+            <select class="region-filter | fw-600 " name="FilterByRegion" id="region" value="naaah" >
+                <option value="all" >All Regions</option>
+                <option value="africa" >Africa</option>
+                <option value="america" >America</option>
+                <option value="asia" >Asia</option>
+                <option value="europe" >Europe</option>
+                <option value="oceania" >Oceania</option>
+            </select>
+        </div>
+        <!-- End the second header of "searching countries by name & filter countiries by region" -->
+        <!-- Start display cartes of countries -->
+        <div class="cartes | container ">
+            
+        </div>
+        <!-- End display cartes of countries -->
+    </main>
+    <!-- End main  -->
+    <!-- Start button of back to top  -->
+    <button class="backToTop"><i class="fa-solid fa-chevron-left"></i></button>
+    <!-- End button of back to top  -->
+    <!-- start the template of carte that display a country's data  -->
+    <template id="carte">
+        <div class="carte | flex-space-between">
+            <span class="carte__image"></span>
+            <section class="carte__infos">
+                <p class="carte__infos__title | fw-800">Germany</p>
+                <section class="carte__infos__data">
+                    <div> <span class="fw-600">Population: </span><span class="population fw-300">81.770.900</span> </div>
+                    <div> <span class="fw-600">Region: </span><span class="region fw-300">Europe</span> </div>
+                    <div> <span class="fw-600">Capital: </span><span class="capital fw-300">Berlin</span> </div>
+                </section>
+            </section>
+        </div>
+    </template>
+    <!-- End the template of carte that display a country's data  -->
+    <!-- Start the template of page that show the full data of country's data -->
+    <template id = "FullcountryData">
+        <main class="main2 | lm-background">
+            <div class="container">
+                <button class="back-button | lm-text"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                <div class="country-info-container | flex-space-between">
+                    <span class="country-info-image"></span>
+                    <section class="country-info-data">
+                        <p class="country-info-data__title | fw-800 lm-text"></p>
+                        <div class="country-info-data__micro-container flex-space-between">
+                            <div>
+                                <div><span class="fw-600 lm-text">Native Name: </span><span class="native-name1 fw-300"></span></div>
+                                <div><span class="fw-600 lm-text">Population: </span><span class="population1 fw-300"></span></div>
+                                <div><span class="fw-600 lm-text">Region: </span><span class="region1 fw-300"></span></div>
+                                <div><span class="fw-600 lm-text">Sub Region: </span><span class="sub-region1 fw-300"></span></div>
+                                <div><span class="fw-600 lm-text">Capital: </span><span class="capital1 fw-300"></span></div>
+                            </div>
+                            <div>
+                                <div><span class="fw-600 lm-text">Top Level Domain: </span><span class="top-level-domain1 fw-300"></span></div>
+                                <div><span class="fw-600 lm-text">Currencies: </span><span class="currencies1 fw-300"></span></div>
+                                <div><span class="fw-600 lm-text">Languages: </span><span class="languages1 fw-300"></span></div>
+                            </div>
+                        </div>
+                        <div class="country-info-data__border-countries"><span class="fw-600 lm-text">Border Countries: </span><span class="border-countries1"></span></div>
+                    </section>
+            </div>
+            </div>
+        </main>
+    </template>
+    <!-- Start the template of page that show the full data of country's data -->
+</body>
+</html>
